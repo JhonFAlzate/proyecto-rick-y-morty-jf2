@@ -74,7 +74,8 @@ const handleChange2 = (e) => {
               placeholder="Enter Information"
             />
             <button className="header__button"> Search </button>
-            <select id="select" value = {locationId2} onChange={handleChange2} name="" >
+
+            <select className="header__button select" id="select" value = {locationId2} onChange={handleChange2} name="" >
             <option  value="alive">  Alive  </option>
             <option  value="dead">   Dead  </option>
             <option  value="unknow"> unknow </option>
