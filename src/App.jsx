@@ -8,8 +8,8 @@ import ApiRicki from "./assets/components/ApiRicki";
 
 function App() {
   const [locationId, setLocationId] = useState(getRandomNumber(126));
-  const [selector, setSelector] = useState("1")
-  const [selectedValue, setSelectedValue] = useState('')
+  
+  const [selectedValue, setSelectedValue] = useState("1")
   const [locationId2, setLocationId2] = useState("alive")
 
   const url = `https://rickandmortyapi.com/api/location/${locationId}`;
@@ -50,11 +50,12 @@ const handleChange = (e) => {
        
       </header>
       <div className="header__form">
-        <label className="header__input" htmlFor="select">Selecciona una opción</label>
+        <label className="header__input" htmlFor="select">Filters</label>
         <select className="header__button select" name="" id="select" value={selectedValue} onChange={handleChange}>
+          
           <option value="1">Filter by location</option>
           <option value="2">Filter by status(alive, dead, unknow)</option>
-          <p>You have selected: {selectedValue}</p>
+          
         </select>
       </div>
       
@@ -91,13 +92,15 @@ const handleChange = (e) => {
         </>
       
     
-    :     
+    :     <>
+        
+            <h2 className="header__error">Write status: alive, dead or unknown</h2>
             <div className="card__container">
               
-                <h2>Write status: alive, dead or unknown</h2>
-                <ApiRicki  url = {url2} location = {locationId2}/>
+                 <ApiRicki  url = {url2} location = {locationId2}/>
                          
             </div>
+            </>
 
 
     }
