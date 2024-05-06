@@ -34,7 +34,7 @@
     background-color: gray;
 }
 .Alive {
-    background-color: green;
+    background-color: rgb(30, 180, 30);
 }
 .Dead {
     background-color: red;
