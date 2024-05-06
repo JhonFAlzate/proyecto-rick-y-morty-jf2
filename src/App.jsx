@@ -33,13 +33,18 @@ function App() {
     setLocationId2(inputId.current.value.trim());
     setCheck(inputId.current.value.trim());
   };
+
 const handleChange = (e) => {
   e.preventDefault();
   setSelectedValue(event.target.value.trim())
-}
+};
 
-  console.log(location);
-  console.log(selectedValue)
+
+const handleChange2 = (e) => {
+  e.preventDefault();
+   setLocationId2(event.target.value);
+};
+  
 
   return (
     <div>
@@ -51,6 +56,7 @@ const handleChange = (e) => {
       </header>
       <div className="header__form">
         <label className="header__input" htmlFor="select">Filters</label>
+
         <select className="header__button select" name="" id="select" value={selectedValue} onChange={handleChange}>
           
           <option value="1">Filter by location</option>
@@ -58,8 +64,9 @@ const handleChange = (e) => {
           
         </select>
       </div>
-      
+   
        <form className="header__form" onSubmit={hadleSubmit}>
+          
             <input
               className="header__input"
               ref={inputId}
@@ -67,13 +74,20 @@ const handleChange = (e) => {
               placeholder="Enter Information"
             />
             <button className="header__button"> Search </button>
+            <select id="select" value = {locationId2} onChange={handleChange2} name="" >
+            <option  value="alive">  Alive  </option>
+            <option  value="dead">   Dead  </option>
+            <option  value="unknow"> unknow </option>
+          </select>
       </form>
+      
+      
       { 
       (selectedValue === "1")
        ? 
       
        ((hansError) || (check==="") || (check==="0"))
-      ? 
+        ? 
       
         <h3 className="header__error">
           {" "}
@@ -92,7 +106,8 @@ const handleChange = (e) => {
         </>
       
     
-    :     <>
+    :  
+        <>
         
             <h2 className="header__error">Write status: alive, dead or unknown</h2>
             <div className="card__container">
@@ -102,7 +117,7 @@ const handleChange = (e) => {
             </div>
             </>
 
-
+       
     }
     
     </div>
