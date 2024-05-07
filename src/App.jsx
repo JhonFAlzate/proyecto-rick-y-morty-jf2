@@ -35,14 +35,13 @@ function App() {
   };
 
 const handleChange = (e) => {
-  e.preventDefault();
-  setSelectedValue(event.target.value.trim())
+  
+  setSelectedValue(e.target.value.trim())
 };
 
 
 const handleChange2 = (e) => {
-  e.preventDefault();
-   setLocationId2(event.target.value);
+   setLocationId2(e.target.value);
 };
   
 
@@ -64,7 +63,9 @@ const handleChange2 = (e) => {
           
         </select>
       </div>
-   
+   {
+    selectedValue === "1"
+      ? (
             <form className="header__form" onSubmit={hadleSubmit}>
           
             <input
@@ -76,11 +77,17 @@ const handleChange2 = (e) => {
             <button className="header__button"> Search </button>
             </form>
 
+      )
+      : (
+
           <select className="header__button select filter" id="select" value = {locationId2} onChange={handleChange2} name="" >
             <option  value="alive">  Alive  </option>
             <option  value="dead">   Dead  </option>
             <option  value="unknow"> unknow </option>
           </select>
+      )
+   }
+
      
       
       
@@ -102,7 +109,9 @@ const handleChange2 = (e) => {
 
                  <div className="card__container">
                  {location?.residents.map((url) => (
-                  <ResidentCard key={url} url={url} />
+                  <ResidentCard
+                   key = {url} 
+                   url = {url} />
                 ))}
                 </div>
         </>

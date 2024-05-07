@@ -9,7 +9,7 @@ const ResidentCard = ({ url }) => {
     getResident();
   }, []);
 
-  console.log(resident);
+ 
   return (
     <article className="resident">
       <header className="resident__header">

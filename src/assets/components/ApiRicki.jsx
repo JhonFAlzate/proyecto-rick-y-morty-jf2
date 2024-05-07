@@ -15,8 +15,8 @@ const ApiRicki = ({ url, location }) => {
     
   resident?.results.map((posicion) => (
     
-    <article className="resident">
-      <header key={resident.id} className="resident__header">
+    <article className="resident" key={posicion.id}>
+      <header  className="resident__header">
         <img className="resident__image" src={posicion?.image} alt="" />
         <div className="resident__status__container">
           <div className={`resident__status__circle ${posicion?.status}`}></div>
