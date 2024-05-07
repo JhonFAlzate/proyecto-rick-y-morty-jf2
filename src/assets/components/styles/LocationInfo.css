@@ -4,7 +4,7 @@
     color: white;
     width: 22em;
     max-width: 30em;
-    padding: 2em 2.5em 2.5em;
+    padding: 1em 1.5em 1.5em;
     border-radius: 1em;
     margin-bottom: 1.5em;
     margin-left: auto;
@@ -24,7 +24,8 @@
 }
 .location__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    text-align: center;
     gap: 1em;
 
 }
