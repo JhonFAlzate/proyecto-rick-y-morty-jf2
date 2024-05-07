@@ -9,7 +9,7 @@ const ApiRicki = ({ url, location }) => {
     getResident();
   }, [location]);
 
-   console.log(resident);
+  
 
   return (
     

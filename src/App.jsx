@@ -120,7 +120,7 @@ const handleChange2 = (e) => {
     :  
         <>
         
-            {/* <h2 className="header__error">Write status: alive, dead or unknown</h2> */}
+            
             <div className="card__container">
               
                  <ApiRicki  url = {url2} location = {locationId2}/>
