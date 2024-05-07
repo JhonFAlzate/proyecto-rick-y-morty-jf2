@@ -47,7 +47,7 @@ const handleChange2 = (e) => {
   
 
   return (
-    <div>
+    <div className="container">
    
       <header className="header">
 
@@ -55,17 +55,17 @@ const handleChange2 = (e) => {
        
       </header>
       <div className="header__form">
-        <label className="header__input" htmlFor="select">Filters</label>
+        
 
         <select className="header__button select" name="" id="select" value={selectedValue} onChange={handleChange}>
           
-          <option value="1">Filter by location</option>
-          <option value="2">Filter by status(alive, dead, unknow)</option>
+          <option value="1"> Filter by location </option>
+          <option value="2"> Filter by status(alive, dead, unknow) </option>
           
         </select>
       </div>
    
-       <form className="header__form" onSubmit={hadleSubmit}>
+            <form className="header__form" onSubmit={hadleSubmit}>
           
             <input
               className="header__input"
@@ -74,13 +74,14 @@ const handleChange2 = (e) => {
               placeholder="Enter Information"
             />
             <button className="header__button"> Search </button>
+            </form>
 
-            <select className="header__button select" id="select" value = {locationId2} onChange={handleChange2} name="" >
+          <select className="header__button select filter" id="select" value = {locationId2} onChange={handleChange2} name="" >
             <option  value="alive">  Alive  </option>
             <option  value="dead">   Dead  </option>
             <option  value="unknow"> unknow </option>
           </select>
-      </form>
+     
       
       
       { 
@@ -110,7 +111,7 @@ const handleChange2 = (e) => {
     :  
         <>
         
-            <h2 className="header__error">Write status: alive, dead or unknown</h2>
+            {/* <h2 className="header__error">Write status: alive, dead or unknown</h2> */}
             <div className="card__container">
               
                  <ApiRicki  url = {url2} location = {locationId2}/>
