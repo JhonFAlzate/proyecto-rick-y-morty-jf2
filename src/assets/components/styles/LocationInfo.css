@@ -1,7 +1,8 @@
 .location {
+   
     background-color: #062226;
     color: white;
-    width: 100%;
+    width: 20em;
     max-width: 30em;
     padding: 2em 2.5em 2.5em;
     border-radius: 1em;
@@ -39,4 +40,11 @@
 }
 .location__value {
     font-size: 0.95em;
+}
+@media screen and (min-width: 940px) {
+
+    .location{
+        width: 30em;
+    }
+
 }
